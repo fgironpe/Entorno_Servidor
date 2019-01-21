@@ -12,3 +12,18 @@ Pedir infinitos números enteros (hasta que se introduzca) el cero. Indicar fina
 	Mínimo: -10
 */
 
+$min = 0;
+$max = 0;
+
+do {
+	echo "Escribe un número: ";
+	fscanf(STDIN, "%d\n",$num);
+	if($num < $min) {
+		$min = $num;
+	}else if ($num > $max){
+		$max = $num;
+	}
+}while ($num != 0);
+
+echo "El menor número es ".$min."\n";
+echo "El mayor número es ".$max;
