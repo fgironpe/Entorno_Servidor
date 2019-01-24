@@ -20,9 +20,9 @@ do {
 	echo "Introduce un nombre:\n";
 	fscanf(STDIN, "%s\n",$nombre);
 
-	echo "Introduce un edad:\n";
-	fscanf(STDIN, "%d\n",$edad);
-	if($nombre != "fin"){
+	if($nombre !== "fin"){
+		echo "Introduce un edad:\n";
+		fscanf(STDIN, "%d\n",$edad);
 		$personas[$nombre] =  $edad;
 	}
 
@@ -31,3 +31,24 @@ do {
 foreach($personas as $nombre => $edad) {
 	echo $nombre."(".$edad.")\n";
 }
+
+echo "¿Cómo quieres ordenar la lista?:\n";
+	fscanf(STDIN, "%s\n",$orden);
+
+	switch($orden) {
+		case "nombre":
+			ksort($personas);
+			break;
+		case "edad":
+			arsort($personas);
+			break;
+		default:
+		echo "Orden inválido";
+		break;	
+	}
+	
+	foreach($personas as $nombre => $edad) {
+		echo $nombre."(".$edad.")\n";
+	}
+
+	//Cuando repetimos el nombre, que es la clave, coge el último valor que se le haya asignado al nombre.
