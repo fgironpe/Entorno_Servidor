@@ -17,10 +17,9 @@ if(isset($_SESSION['usuarios'])) {
 				
 				if($datosMensaje['remitente'] == $key ) {
 					$numMensaje++;
-					echo " // nM // ";
 				} 
 			}
-			echo "(". $numMensaje . ")";
+			echo " (". $numMensaje . ") ";
 			if($numMensaje > 0) {
 				echo "<a href='leer.php?rem={$key}'>Leer</a>";	
 			}
